@@ -16,6 +16,7 @@
 
 // Service Layer
 #import "MarkerView.h"
+#import "PlacesLoader.h"
 
 @interface FlipsideViewController ()<ARLocationDelegate, ARDelegate, ARMarkerDelegate, MarkerViewDelegate>
 
@@ -23,6 +24,11 @@
 @property(nonatomic,strong) NSMutableArray *geoLocations;
 
 @end
+
+NSString *const kPhoneKey = @"formatted_phone_number";
+NSString *const kWebsiteKey = @"website";
+
+const int kInfoViewTag = 1001;
 
 @implementation FlipsideViewController
 
@@ -88,6 +94,43 @@
 #pragma mark - MarkerViewDelegate methods
 
 -(void)didTouchMarkerView:(MarkerView *)markerView {
+    
+    ARGeoCoordinate *tappedCoordinate = markerView.coordinate;
+    CLLocation *location = tappedCoordinate.geoLocation;
+    
+    int index = (int)[self.locations indexOfObjectPassingTest:^(Place *place, NSUInteger index, BOOL *stop) {
+        return [place.location isEqual:location];
+    }];
+    
+    if ( index != NSNotFound ) {
+
+        Place *tappedPlace = self.locations[index];
+        
+        [[PlacesLoader sharedInstance] loadDetailInformation:tappedPlace successHanlder:^(NSDictionary *response) {
+
+            NSDictionary *resultDict = response[@"result"];
+            
+            tappedPlace.phoneNumber = resultDict[kPhoneKey];
+            tappedPlace.website = resultDict[kWebsiteKey];
+
+            [self showInfoViewForPlace:tappedPlace];
+            
+        } errorHandler:^(NSError *error) {
+            NSLog( @"Error: %@", error );
+        }];
+        
+    }
+    
+}
+
+#pragma mark - Touch Event methods
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+
+    UIView *infoView = [self.view viewWithTag:kInfoViewTag];
+
+    [infoView removeFromSuperview];
+
 }
 
 #pragma mark - Private methods
@@ -122,6 +165,23 @@
         
     }
     
+}
+
+-(void)showInfoViewForPlace:(Place *)place {
+
+    CGRect frame = self.view.frame;
+    CGRect frameInfoView = CGRectMake(50.0f, 50.0f, frame.size.width - 100.0f, frame.size.height - 100.0f);
+
+    UITextView *infoView = [[UITextView alloc] initWithFrame:frameInfoView];
+    infoView.center = self.view.center;
+    infoView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+
+    infoView.text = place.infoText;
+    infoView.tag = kInfoViewTag;
+    infoView.editable = NO;
+
+    [self.view addSubview:infoView];
+
 }
 
 @end

@@ -70,4 +70,19 @@ const float kHeight = 100.0f;
     
 }
 
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+
+    if ( self.delegate && [self.delegate conformsToProtocol:@protocol(MarkerViewDelegate)] )
+        [self.delegate didTouchMarkerView:self];
+
+}
+
+-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+
+    CGRect theFrame = CGRectMake(0, 0, kWidth, kHeight);
+
+    return CGRectContainsPoint(theFrame, point);
+
+}
+
 @end

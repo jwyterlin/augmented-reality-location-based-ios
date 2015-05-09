@@ -12,6 +12,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import <Foundation/NSJSONSerialization.h>
 
+// Model
+#import "Place.h"
+
 NSString *const apiURL = @"https://maps.googleapis.com/maps/api/place/";
 NSString *const apiKey = @"AIzaSyBAydiT1VyV_HbZ1ATzNb2RQw_nDmPypqM";
 NSString *const serverKey = @"AIzaSyAN1H-2VZDZ7SEg9_ECoOPR7DFNk9A1VuI";
@@ -79,6 +82,39 @@ NSString *const serverKey = @"AIzaSyAN1H-2VZDZ7SEg9_ECoOPR7DFNk9A1VuI";
     
     NSLog(@"Starting connection: %@ for request: %@", connection, request);
     
+}
+
+-(void)loadDetailInformation:(Place *)location
+              successHanlder:(SuccessHandler)handler
+                errorHandler:(ErrorHandler)errorHandler {
+
+    self.responseData = nil;
+    self.successHandler = handler;
+    self.errorHandler = errorHandler;
+
+    NSMutableString *uri = [NSMutableString stringWithString:apiURL];
+    [uri appendString:@"details/json?"];
+    [uri appendFormat:@"reference=%@", location.reference];
+    [uri appendString:@"&sensor=true"];
+    [uri appendFormat:@"&key=%@", serverKey];
+
+    NSString *urlString = [uri stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    NSURL *url = [NSURL URLWithString:urlString];
+
+    double intervalInSeconds = 20.0;
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                                       timeoutInterval:intervalInSeconds];
+
+    [request setHTTPShouldHandleCookies:YES];
+    [request setHTTPMethod:@"GET"];
+
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+
+    NSLog( @"Starting connection: %@ for request: %@", connection, request );
+
 }
 
 #pragma mark - NSURLConnectionDelegate methods
