@@ -20,6 +20,7 @@
 		7B6ED3241AFE79FE00A04417 /* PlacesLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3231AFE79FE00A04417 /* PlacesLoader.m */; };
 		7B6ED3291AFE8E6400A04417 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3281AFE8E6400A04417 /* Place.m */; };
 		7B6ED32C1AFE959900A04417 /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED32B1AFE959900A04417 /* PlaceAnnotation.m */; };
+		7B6ED32E1AFEAC3500A04417 /* ARKit in Resources */ = {isa = PBXBuildFile; fileRef = 7B6ED32D1AFEAC3500A04417 /* ARKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		7B6ED3281AFE8E6400A04417 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Place.m; path = Model/Place.m; sourceTree = "<group>"; };
 		7B6ED32A1AFE959900A04417 /* PlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaceAnnotation.h; path = Model/PlaceAnnotation.h; sourceTree = "<group>"; };
 		7B6ED32B1AFE959900A04417 /* PlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaceAnnotation.m; path = Model/PlaceAnnotation.m; sourceTree = "<group>"; };
+		7B6ED32D1AFEAC3500A04417 /* ARKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ARKit; path = "Third Party/ARKit"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				7B6ED31E1AFE673F00A04417 /* Service Layer */,
 				7B6ED30D1AFE4F0D00A04417 /* Storyboard */,
 				7B6ED2E51AFE4D8D00A04417 /* Supporting Files */,
+				7B6ED32F1AFEAC3B00A04417 /* Third Party */,
 				7B6ED30C1AFE4EFB00A04417 /* ViewController */,
 			);
 			path = "AR Location Based";
@@ -211,6 +214,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		7B6ED32F1AFEAC3B00A04417 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				7B6ED32D1AFEAC3500A04417 /* ARKit */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6ED32E1AFEAC3500A04417 /* ARKit in Resources */,
 				7B6ED2F11AFE4D8D00A04417 /* Main.storyboard in Resources */,
 				7B6ED2F61AFE4D8D00A04417 /* LaunchScreen.xib in Resources */,
 				7B6ED2F31AFE4D8D00A04417 /* Images.xcassets in Resources */,
