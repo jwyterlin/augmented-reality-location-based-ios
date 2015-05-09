@@ -45,6 +45,9 @@
                                         <include reference="wz3-EA-OHZ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="4sX-O4-oTg" kind="presentation" id="MsB-4t-haX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -87,12 +90,68 @@
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="OAd-oj-ODL" id="Oaj-w4-pI9"/>
-                        <outlet property="mapView" destination="7IC-pP-sE7" id="IwN-Dk-kHj"/>
+                        <outlet property="mapView" destination="7IC-pP-sE7" id="MKk-4Q-J6R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="279" y="336.75"/>
+        </scene>
+        <!--Flipside View Controller-->
+        <scene sceneID="vdU-bG-a5z">
+            <objects>
+                <viewController id="4sX-O4-oTg" customClass="FlipsideViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vzB-qt-6oJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="EnB-Rp-aGr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dkZ-RC-8a0">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="215-PS-uOf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="TItle" id="rA0-GG-7KJ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Tep-3O-odW">
+                                            <connections>
+                                                <action selector="done:" destination="4sX-O4-oTg" id="x8p-lC-bag"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="215-PS-uOf" firstAttribute="leading" secondItem="dkZ-RC-8a0" secondAttribute="leading" id="MIw-Ws-Dfg"/>
+                            <constraint firstItem="215-PS-uOf" firstAttribute="top" secondItem="dkZ-RC-8a0" secondAttribute="top" id="NAt-zo-B4e"/>
+                            <constraint firstAttribute="trailing" secondItem="215-PS-uOf" secondAttribute="trailing" id="Y1c-C3-nUj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="215-PS-uOf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="MIw-Ws-Dfg"/>
+                                <exclude reference="NAt-zo-B4e"/>
+                                <exclude reference="Y1c-C3-nUj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="215-PS-uOf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="MIw-Ws-Dfg"/>
+                                <include reference="NAt-zo-B4e"/>
+                                <include reference="Y1c-C3-nUj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VLE-bg-Vfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101" y="336.75"/>
         </scene>
     </scenes>
 </document>

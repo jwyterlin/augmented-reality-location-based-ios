@@ -15,6 +15,7 @@
 		7B6ED3111AFE500B00A04417 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3101AFE500B00A04417 /* FlipsideViewController.m */; };
 		7B6ED3151AFE505F00A04417 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3141AFE505F00A04417 /* MainViewController.m */; };
 		7B6ED3181AFE507400A04417 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3171AFE507400A04417 /* AppDelegate.m */; };
+		7B6ED31A1AFE586E00A04417 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6ED3191AFE586E00A04417 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		7B6ED3141AFE505F00A04417 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewController/MainViewController.m; sourceTree = "<group>"; };
 		7B6ED3161AFE507400A04417 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AppDelegate/AppDelegate.h; sourceTree = "<group>"; };
 		7B6ED3171AFE507400A04417 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = AppDelegate/AppDelegate.m; sourceTree = "<group>"; };
+		7B6ED3191AFE586E00A04417 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6ED31A1AFE586E00A04417 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +71,7 @@
 			children = (
 				7B6ED2E41AFE4D8D00A04417 /* AR Location Based */,
 				7B6ED2FE1AFE4D8D00A04417 /* AR Location BasedTests */,
+				7B6ED31B1AFE587F00A04417 /* Frameworks */,
 				7B6ED2E31AFE4D8D00A04417 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -162,6 +166,14 @@
 				7B6ED3141AFE505F00A04417 /* MainViewController.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		7B6ED31B1AFE587F00A04417 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B6ED3191AFE586E00A04417 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
