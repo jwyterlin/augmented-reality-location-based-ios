@@ -8,16 +8,16 @@
 
 #import "FlipsideViewController.h"
 
-#import <MapKit/MapKit.h>
+// Third party
 #import "ARKit.h"
 
 // Model
 #import "Place.h"
 
-@interface FlipsideViewController ()<ARLocationDelegate, ARDelegate, ARMarkerDelegate>
+// Service Layer
+#import "MarkerView.h"
 
-@property(nonatomic,strong) NSArray *locations;
-@property(nonatomic,strong) MKUserLocation *userLocation;
+@interface FlipsideViewController ()<ARLocationDelegate, ARDelegate, ARMarkerDelegate, MarkerViewDelegate>
 
 @property(nonatomic,strong) AugmentedRealityController *arController;
 @property(nonatomic,strong) NSMutableArray *geoLocations;
@@ -31,6 +31,14 @@
     [super viewDidLoad];
     
     [self setupARController];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    [self geoLocations];
     
 }
 
@@ -66,7 +74,12 @@
 #pragma mark - ARLocationDelegate methods
 
 -(NSMutableArray *)geoLocations {
-    return nil;
+
+    if ( ! self.geoLocations)
+        [self generateGeoLocations];
+
+    return _geoLocations;
+
 }
 
 -(void)locationClicked:(ARGeoCoordinate *) coordinate {
@@ -96,7 +109,8 @@
 
         [coordinate calibrateUsingOrigin:self.userLocation.location];
         
-        // more code later
+        MarkerView *markerView = [[MarkerView alloc] initWithCoordinate:coordinate delegate:self];
+        [coordinate setDisplayView:markerView];
         
         [self.arController addCoordinate:coordinate];
         [self.geoLocations addObject:coordinate];

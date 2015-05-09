@@ -25,6 +25,7 @@
 		7B6ED33F1AFEAE4F00A04417 /* ARKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3361AFEAE4F00A04417 /* ARKit.m */; };
 		7B6ED3401AFEAE4F00A04417 /* AugmentedRealityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED33A1AFEAE4F00A04417 /* AugmentedRealityController.m */; };
 		7B6ED3411AFEAE4F00A04417 /* GEOLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED33C1AFEAE4F00A04417 /* GEOLocations.m */; };
+		7B6ED3441AFEB50D00A04417 /* MarkerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3431AFEB50D00A04417 /* MarkerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		7B6ED33A1AFEAE4F00A04417 /* AugmentedRealityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AugmentedRealityController.m; path = "Third Party/ARKit/AugmentedRealityController.m"; sourceTree = "<group>"; };
 		7B6ED33B1AFEAE4F00A04417 /* GEOLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEOLocations.h; path = "Third Party/ARKit/GEOLocations.h"; sourceTree = "<group>"; };
 		7B6ED33C1AFEAE4F00A04417 /* GEOLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEOLocations.m; path = "Third Party/ARKit/GEOLocations.m"; sourceTree = "<group>"; };
+		7B6ED3421AFEB50D00A04417 /* MarkerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarkerView.h; path = "Service Layer/MarkerView.h"; sourceTree = "<group>"; };
+		7B6ED3431AFEB50D00A04417 /* MarkerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarkerView.m; path = "Service Layer/MarkerView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +217,8 @@
 			children = (
 				7B6ED3221AFE79FE00A04417 /* PlacesLoader.h */,
 				7B6ED3231AFE79FE00A04417 /* PlacesLoader.m */,
+				7B6ED3421AFEB50D00A04417 /* MarkerView.h */,
+				7B6ED3431AFEB50D00A04417 /* MarkerView.m */,
 			);
 			name = "Service Layer";
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				7B6ED3291AFE8E6400A04417 /* Place.m in Sources */,
 				7B6ED32C1AFE959900A04417 /* PlaceAnnotation.m in Sources */,
 				7B6ED33F1AFEAE4F00A04417 /* ARKit.m in Sources */,
+				7B6ED3441AFEB50D00A04417 /* MarkerView.m in Sources */,
 				7B6ED33E1AFEAE4F00A04417 /* ARGeoCoordinate.m in Sources */,
 				7B6ED33D1AFEAE4F00A04417 /* ARCoordinate.m in Sources */,
 				7B6ED3401AFEAE4F00A04417 /* AugmentedRealityController.m in Sources */,

@@ -64,9 +64,14 @@ const double MAX_DISTANCE_ACCURACY_IN_METERS = 100.0;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ( [[segue identifier] isEqualToString:@"showAlternate"] )
+    if ( [[segue identifier] isEqualToString:@"showAlternate"] ) {
+
         [[segue destinationViewController] setDelegate:self];
-    
+        [[segue destinationViewController] setLocations:self.locations];
+        [[segue destinationViewController] setUserLocation:[self.mapView userLocation]];
+
+    }
+
 }
 
 #pragma mark - CLLocationManagerDelegate methods
