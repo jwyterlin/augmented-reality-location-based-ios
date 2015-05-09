@@ -27,8 +27,11 @@ NSString * const kLongitudeKeypath = @"geometry.location.lng";
 
 @interface MainViewController ()<FlipsideViewControllerDelegate,CLLocationManagerDelegate,MKMapViewDelegate>
 
-@property (nonatomic,strong) IBOutlet MKMapView *mapView;
+@property (nonatomic,strong) MKMapView *mapView;
+@property (nonatomic,strong) IBOutlet MKMapView *mapViewVertical;
+@property (nonatomic,strong) IBOutlet MKMapView *mapViewHorizontal;
 @property (nonatomic,strong) IBOutlet UIButton *cameraButton;
+@property (nonatomic,strong) IBOutlet UIButton *cameraButtonHorizontal;
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @property (nonatomic,strong) NSArray *locations;
 
@@ -45,13 +48,39 @@ const double MAX_DISTANCE_ACCURACY_IN_METERS = 100.0;
     [super viewDidLoad];
     
     self.cameraButton.layer.cornerRadius = 5.0;
+    self.cameraButtonHorizontal.layer.cornerRadius = 5.0;
     
     [self setupLocationManager];
+    
+    self.mapView = self.mapViewVertical;
     
 }
 
 -(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+-(void)viewWillTransitionToSize:(CGSize)size
+       withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        
+         UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+         
+         if ( UIInterfaceOrientationIsLandscape(orientation) )
+             self.mapView = self.mapViewHorizontal;
+         else
+             self.mapView = self.mapViewVertical;
+
+         if ( self.mapViewHorizontal.annotations.count == 0 ) {
+             [self.mapViewHorizontal addAnnotations:self.mapViewVertical.annotations];
+             self.mapViewHorizontal.region = self.mapViewVertical.region;
+         }
+
+     } completion:^(id<UIViewControllerTransitionCoordinatorContext> context){}];
+    
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+
 }
 
 #pragma mark - FlipsideViewControllerDelegate methods
@@ -68,7 +97,7 @@ const double MAX_DISTANCE_ACCURACY_IN_METERS = 100.0;
 
         [[segue destinationViewController] setDelegate:self];
         [[segue destinationViewController] setLocations:self.locations];
-        [[segue destinationViewController] setUserLocation:[self.mapView userLocation]];
+        [[segue destinationViewController] setUserLocation:self.mapView.userLocation];
 
     }
 
