@@ -112,7 +112,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="215-PS-uOf">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="TItle" id="rA0-GG-7KJ">
+                                    <navigationItem title="Camera" id="rA0-GG-7KJ">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="Tep-3O-odW">
                                             <connections>
                                                 <action selector="done:" destination="4sX-O4-oTg" id="x8p-lC-bag"/>
