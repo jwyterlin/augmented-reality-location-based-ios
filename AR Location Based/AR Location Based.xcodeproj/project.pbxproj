@@ -18,6 +18,7 @@
 		7B6ED31A1AFE586E00A04417 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6ED3191AFE586E00A04417 /* MapKit.framework */; };
 		7B6ED31D1AFE596200A04417 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6ED31C1AFE596200A04417 /* CoreLocation.framework */; };
 		7B6ED3241AFE79FE00A04417 /* PlacesLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3231AFE79FE00A04417 /* PlacesLoader.m */; };
+		7B6ED3291AFE8E6400A04417 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3281AFE8E6400A04417 /* Place.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		7B6ED31C1AFE596200A04417 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7B6ED3221AFE79FE00A04417 /* PlacesLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlacesLoader.h; path = "Service Layer/PlacesLoader.h"; sourceTree = "<group>"; };
 		7B6ED3231AFE79FE00A04417 /* PlacesLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlacesLoader.m; path = "Service Layer/PlacesLoader.m"; sourceTree = "<group>"; };
+		7B6ED3271AFE8E6400A04417 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Place.h; path = Model/Place.h; sourceTree = "<group>"; };
+		7B6ED3281AFE8E6400A04417 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Place.m; path = Model/Place.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +97,11 @@
 		7B6ED2E41AFE4D8D00A04417 /* AR Location Based */ = {
 			isa = PBXGroup;
 			children = (
-				7B6ED31E1AFE673F00A04417 /* Service Layer */,
 				7B6ED30B1AFE4EE700A04417 /* AppDelegate */,
 				7B6ED2F21AFE4D8D00A04417 /* Images.xcassets */,
 				7B6ED2F41AFE4D8D00A04417 /* LaunchScreen.xib */,
+				7B6ED3261AFE8E4200A04417 /* Model */,
+				7B6ED31E1AFE673F00A04417 /* Service Layer */,
 				7B6ED30D1AFE4F0D00A04417 /* Storyboard */,
 				7B6ED2E51AFE4D8D00A04417 /* Supporting Files */,
 				7B6ED30C1AFE4EFB00A04417 /* ViewController */,
@@ -191,6 +195,15 @@
 				7B6ED3231AFE79FE00A04417 /* PlacesLoader.m */,
 			);
 			name = "Service Layer";
+			sourceTree = "<group>";
+		};
+		7B6ED3261AFE8E4200A04417 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B6ED3271AFE8E6400A04417 /* Place.h */,
+				7B6ED3281AFE8E6400A04417 /* Place.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +310,7 @@
 				7B6ED3241AFE79FE00A04417 /* PlacesLoader.m in Sources */,
 				7B6ED3111AFE500B00A04417 /* FlipsideViewController.m in Sources */,
 				7B6ED3151AFE505F00A04417 /* MainViewController.m in Sources */,
+				7B6ED3291AFE8E6400A04417 /* Place.m in Sources */,
 				7B6ED2E81AFE4D8D00A04417 /* main.m in Sources */,
 				7B6ED3181AFE507400A04417 /* AppDelegate.m in Sources */,
 			);
