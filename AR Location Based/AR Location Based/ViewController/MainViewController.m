@@ -7,21 +7,41 @@
 //
 
 #import "MainViewController.h"
+#import "FlipsideViewController.h"
 
-@interface MainViewController ()
+#import <MapKit/MapKit.h>
+
+@interface MainViewController ()<FlipsideViewControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
 @implementation MainViewController
 
-- (void)viewDidLoad {
+#pragma mark - View Lifecycle
+
+-(void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - FlipsideViewControllerDelegate methods
+
+-(void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Prepare for Segue
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ( [[segue identifier] isEqualToString:@"showAlternate"] )
+        [[segue destinationViewController] setDelegate:self];
+    
 }
 
 @end

@@ -10,6 +10,4 @@
 
 @interface MainViewController : UIViewController
 
-
 @end
-
