@@ -19,6 +19,7 @@
 		7B6ED31D1AFE596200A04417 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6ED31C1AFE596200A04417 /* CoreLocation.framework */; };
 		7B6ED3241AFE79FE00A04417 /* PlacesLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3231AFE79FE00A04417 /* PlacesLoader.m */; };
 		7B6ED3291AFE8E6400A04417 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3281AFE8E6400A04417 /* Place.m */; };
+		7B6ED32C1AFE959900A04417 /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED32B1AFE959900A04417 /* PlaceAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		7B6ED3231AFE79FE00A04417 /* PlacesLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlacesLoader.m; path = "Service Layer/PlacesLoader.m"; sourceTree = "<group>"; };
 		7B6ED3271AFE8E6400A04417 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Place.h; path = Model/Place.h; sourceTree = "<group>"; };
 		7B6ED3281AFE8E6400A04417 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Place.m; path = Model/Place.m; sourceTree = "<group>"; };
+		7B6ED32A1AFE959900A04417 /* PlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaceAnnotation.h; path = Model/PlaceAnnotation.h; sourceTree = "<group>"; };
+		7B6ED32B1AFE959900A04417 /* PlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaceAnnotation.m; path = Model/PlaceAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 			children = (
 				7B6ED3271AFE8E6400A04417 /* Place.h */,
 				7B6ED3281AFE8E6400A04417 /* Place.m */,
+				7B6ED32A1AFE959900A04417 /* PlaceAnnotation.h */,
+				7B6ED32B1AFE959900A04417 /* PlaceAnnotation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				7B6ED3151AFE505F00A04417 /* MainViewController.m in Sources */,
 				7B6ED3291AFE8E6400A04417 /* Place.m in Sources */,
 				7B6ED2E81AFE4D8D00A04417 /* main.m in Sources */,
+				7B6ED32C1AFE959900A04417 /* PlaceAnnotation.m in Sources */,
 				7B6ED3181AFE507400A04417 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
