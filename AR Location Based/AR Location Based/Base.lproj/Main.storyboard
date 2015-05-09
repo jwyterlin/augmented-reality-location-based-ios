@@ -46,7 +46,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="4sX-O4-oTg" kind="presentation" id="MsB-4t-haX"/>
+                                    <segue destination="4sX-O4-oTg" kind="presentation" identifier="showAlternate" id="MsB-4t-haX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,12 +65,12 @@
                                 <exclude reference="OAd-oj-ODL"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="8vb-KX-ims"/>
+                                <exclude reference="Ajs-GJ-cfC"/>
+                                <exclude reference="c2Q-a2-bTx"/>
                                 <exclude reference="JBW-wL-3i8"/>
                                 <exclude reference="JfI-QQ-05G"/>
                                 <exclude reference="VJV-gW-Bj3"/>
-                                <exclude reference="c2Q-a2-bTx"/>
-                                <exclude reference="8vb-KX-ims"/>
-                                <exclude reference="Ajs-GJ-cfC"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -79,12 +79,12 @@
                                 <include reference="OAd-oj-ODL"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="8vb-KX-ims"/>
+                                <include reference="Ajs-GJ-cfC"/>
+                                <include reference="c2Q-a2-bTx"/>
                                 <include reference="JBW-wL-3i8"/>
                                 <include reference="JfI-QQ-05G"/>
                                 <include reference="VJV-gW-Bj3"/>
-                                <include reference="c2Q-a2-bTx"/>
-                                <include reference="8vb-KX-ims"/>
-                                <include reference="Ajs-GJ-cfC"/>
                             </mask>
                         </variation>
                     </view>
@@ -106,6 +106,7 @@
                         <viewControllerLayoutGuide type="bottom" id="EnB-Rp-aGr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dkZ-RC-8a0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="215-PS-uOf">

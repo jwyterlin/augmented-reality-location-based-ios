@@ -12,6 +12,9 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+// Service Layer
+#import "PlacesLoader.h"
+
 @interface MainViewController ()<FlipsideViewControllerDelegate,CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (nonatomic,strong) IBOutlet MKMapView *mapView;
@@ -58,24 +61,49 @@ const double MAX_DISTANCE_ACCURACY_IN_METERS = 100.0;
 #pragma mark - CLLocationManagerDelegate methods
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    
+
     CLLocation *newestLocation = [locations lastObject];
-    
+
     CLLocationAccuracy accuracy = [newestLocation horizontalAccuracy];
-    
+
     if ( accuracy < MAX_DISTANCE_ACCURACY_IN_METERS ) {
 
         MKCoordinateSpan span = MKCoordinateSpanMake( 0.14, 0.14 );
         MKCoordinateRegion region = MKCoordinateRegionMake( [newestLocation coordinate], span );
-        
+
         [self.mapView setRegion:region animated:YES];
         
-        // More code here
-        
+        int radiusInMeters = 1000;
+
+        [[PlacesLoader sharedInstance] loadPOIsForLocation:[locations lastObject] radius:radiusInMeters successHandler:^(NSDictionary *response) {
+
+            NSLog( @"Response: %@", response );
+
+            // More code here
+
+        } errorHandler:^(NSError *error) {
+
+            NSLog( @"Error: %@", error );
+
+        }];
+
         // Stop to save battery life
         [manager stopUpdatingLocation];
-        
+
     }
+
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog( @"locationManager: didFailWithError: %@", error );
+}
+
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    
+    NSLog( @"didChangeAuthorizationStatus: %i", status );
+    
+    // To use in the future
+//    self.gpsDenied = ( status == kCLAuthorizationStatusDenied );
     
 }
 
@@ -86,6 +114,10 @@ const double MAX_DISTANCE_ACCURACY_IN_METERS = 100.0;
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    
+    if ( [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)] )
+        [self.locationManager requestWhenInUseAuthorization];
+    
     [self.locationManager startUpdatingLocation];
     
 }
