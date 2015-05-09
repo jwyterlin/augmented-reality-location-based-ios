@@ -15,11 +15,22 @@
 // Service Layer
 #import "PlacesLoader.h"
 
+// Model
+#import "Place.h"
+#import "PlaceAnnotation.h"
+
+NSString * const kNameKey = @"name";
+NSString * const kReferenceKey = @"reference";
+NSString * const kAddressKey = @"vicinity";
+NSString * const kLatitudeKeypath = @"geometry.location.lat";
+NSString * const kLongitudeKeypath = @"geometry.location.lng";
+
 @interface MainViewController ()<FlipsideViewControllerDelegate,CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (nonatomic,strong) IBOutlet MKMapView *mapView;
 @property (nonatomic,strong) IBOutlet UIButton *cameraButton;
-@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic,strong) CLLocationManager *locationManager;
+@property (nonatomic,strong) NSArray *locations;
 
 @end
 
@@ -77,9 +88,44 @@ const double MAX_DISTANCE_ACCURACY_IN_METERS = 100.0;
 
         [[PlacesLoader sharedInstance] loadPOIsForLocation:[locations lastObject] radius:radiusInMeters successHandler:^(NSDictionary *response) {
 
-            NSLog( @"Response: %@", response );
+            if ( [response[@"status"] isEqualToString:@"OK"] ) {
 
-            // More code here
+                id places = response[@"results"];
+
+                NSMutableArray *temp = [NSMutableArray array];
+                
+                if ( [places isKindOfClass:[NSArray class]] ) {
+                    
+                    for ( NSDictionary *resultsDict in places ) {
+
+                        float latitude = [[resultsDict valueForKeyPath:kLatitudeKeypath] floatValue];
+                        float longitude = [[resultsDict valueForKeyPath:kLongitudeKeypath] floatValue];
+                        
+                        CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+                        
+                        NSString *reference = resultsDict[kReferenceKey];
+                        NSString *name = [resultsDict objectForKey:kNameKey];
+                        NSString *address = [resultsDict objectForKey:kAddressKey];
+                        
+                        Place *currentPlace = [[Place alloc] initWithLocation:location
+                                                                    reference:reference
+                                                                         name:name
+                                                                      address:address];
+
+                        [temp addObject:currentPlace];
+
+                        PlaceAnnotation *annotation = [[PlaceAnnotation alloc] initWithPlace:currentPlace];
+                        [self.mapView addAnnotation:annotation];
+                        
+                    }
+                    
+                }
+                
+                self.locations = [temp copy];
+                
+                NSLog( @"Locations: %@", self.locations );
+                
+            }
 
         } errorHandler:^(NSError *error) {
 
