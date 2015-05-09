@@ -1,3 +1,3 @@
 # Augmented Reality for iOS
 
-An iOS app using Augmented Reality
+An iOS app using Augmented Reality Location Based
