@@ -28,7 +28,27 @@
 }
 
 -(NSString *)infoText {
-    return [NSString stringWithFormat:@"Name:%@\nAddress:%@\nPhone:%@\nWeb:%@", self.placeName, self.address, self.phoneNumber, self.website];
+    
+    NSMutableString *mutableString = [NSMutableString new];
+    
+    if ( self.placeName )
+        if ( ! [self.placeName isEqualToString:@""] )
+            [mutableString appendFormat:@"Name: %@\n", self.placeName];
+    
+    if ( self.address )
+        if ( ! [self.address isEqualToString:@""] )
+        [mutableString appendFormat:@"Address: %@\n", self.address];
+    
+    if ( self.phoneNumber )
+        if ( ! [self.phoneNumber isEqualToString:@""] )
+        [mutableString appendFormat:@"Phone: %@\n", self.phoneNumber];
+    
+    if ( self.website )
+        if ( ! [self.website isEqualToString:@""] )
+        [mutableString appendFormat:@"Web: %@", self.website];
+
+    return [NSString stringWithString:mutableString];
+
 }
 
 @end
