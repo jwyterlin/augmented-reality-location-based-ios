@@ -81,14 +81,12 @@
 		7B6ED2E41AFE4D8D00A04417 /* AR Location Based */ = {
 			isa = PBXGroup;
 			children = (
-				7B6ED2E91AFE4D8D00A04417 /* AppDelegate.h */,
-				7B6ED2EA1AFE4D8D00A04417 /* AppDelegate.m */,
-				7B6ED2EC1AFE4D8D00A04417 /* ViewController.h */,
-				7B6ED2ED1AFE4D8D00A04417 /* ViewController.m */,
-				7B6ED2EF1AFE4D8D00A04417 /* Main.storyboard */,
+				7B6ED30B1AFE4EE700A04417 /* AppDelegate */,
 				7B6ED2F21AFE4D8D00A04417 /* Images.xcassets */,
 				7B6ED2F41AFE4D8D00A04417 /* LaunchScreen.xib */,
+				7B6ED30D1AFE4F0D00A04417 /* Storyboard */,
 				7B6ED2E51AFE4D8D00A04417 /* Supporting Files */,
+				7B6ED30C1AFE4EFB00A04417 /* ViewController */,
 			);
 			path = "AR Location Based";
 			sourceTree = "<group>";
@@ -117,6 +115,32 @@
 				7B6ED3001AFE4D8D00A04417 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7B6ED30B1AFE4EE700A04417 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7B6ED2E91AFE4D8D00A04417 /* AppDelegate.h */,
+				7B6ED2EA1AFE4D8D00A04417 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		7B6ED30C1AFE4EFB00A04417 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7B6ED2EC1AFE4D8D00A04417 /* ViewController.h */,
+				7B6ED2ED1AFE4D8D00A04417 /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		7B6ED30D1AFE4F0D00A04417 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7B6ED2EF1AFE4D8D00A04417 /* Main.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
