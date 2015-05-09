@@ -20,7 +20,11 @@
 		7B6ED3241AFE79FE00A04417 /* PlacesLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3231AFE79FE00A04417 /* PlacesLoader.m */; };
 		7B6ED3291AFE8E6400A04417 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3281AFE8E6400A04417 /* Place.m */; };
 		7B6ED32C1AFE959900A04417 /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED32B1AFE959900A04417 /* PlaceAnnotation.m */; };
-		7B6ED32E1AFEAC3500A04417 /* ARKit in Resources */ = {isa = PBXBuildFile; fileRef = 7B6ED32D1AFEAC3500A04417 /* ARKit */; };
+		7B6ED33D1AFEAE4F00A04417 /* ARCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3321AFEAE4F00A04417 /* ARCoordinate.m */; };
+		7B6ED33E1AFEAE4F00A04417 /* ARGeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3341AFEAE4F00A04417 /* ARGeoCoordinate.m */; };
+		7B6ED33F1AFEAE4F00A04417 /* ARKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED3361AFEAE4F00A04417 /* ARKit.m */; };
+		7B6ED3401AFEAE4F00A04417 /* AugmentedRealityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED33A1AFEAE4F00A04417 /* AugmentedRealityController.m */; };
+		7B6ED3411AFEAE4F00A04417 /* GEOLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED33C1AFEAE4F00A04417 /* GEOLocations.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +61,18 @@
 		7B6ED3281AFE8E6400A04417 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Place.m; path = Model/Place.m; sourceTree = "<group>"; };
 		7B6ED32A1AFE959900A04417 /* PlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaceAnnotation.h; path = Model/PlaceAnnotation.h; sourceTree = "<group>"; };
 		7B6ED32B1AFE959900A04417 /* PlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaceAnnotation.m; path = Model/PlaceAnnotation.m; sourceTree = "<group>"; };
-		7B6ED32D1AFEAC3500A04417 /* ARKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ARKit; path = "Third Party/ARKit"; sourceTree = "<group>"; };
+		7B6ED3311AFEAE4F00A04417 /* ARCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARCoordinate.h; path = "Third Party/ARKit/ARCoordinate.h"; sourceTree = "<group>"; };
+		7B6ED3321AFEAE4F00A04417 /* ARCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARCoordinate.m; path = "Third Party/ARKit/ARCoordinate.m"; sourceTree = "<group>"; };
+		7B6ED3331AFEAE4F00A04417 /* ARGeoCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARGeoCoordinate.h; path = "Third Party/ARKit/ARGeoCoordinate.h"; sourceTree = "<group>"; };
+		7B6ED3341AFEAE4F00A04417 /* ARGeoCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARGeoCoordinate.m; path = "Third Party/ARKit/ARGeoCoordinate.m"; sourceTree = "<group>"; };
+		7B6ED3351AFEAE4F00A04417 /* ARKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARKit.h; path = "Third Party/ARKit/ARKit.h"; sourceTree = "<group>"; };
+		7B6ED3361AFEAE4F00A04417 /* ARKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARKit.m; path = "Third Party/ARKit/ARKit.m"; sourceTree = "<group>"; };
+		7B6ED3371AFEAE4F00A04417 /* ARLocationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARLocationDelegate.h; path = "Third Party/ARKit/ARLocationDelegate.h"; sourceTree = "<group>"; };
+		7B6ED3381AFEAE4F00A04417 /* ARViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARViewProtocol.h; path = "Third Party/ARKit/ARViewProtocol.h"; sourceTree = "<group>"; };
+		7B6ED3391AFEAE4F00A04417 /* AugmentedRealityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AugmentedRealityController.h; path = "Third Party/ARKit/AugmentedRealityController.h"; sourceTree = "<group>"; };
+		7B6ED33A1AFEAE4F00A04417 /* AugmentedRealityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AugmentedRealityController.m; path = "Third Party/ARKit/AugmentedRealityController.m"; sourceTree = "<group>"; };
+		7B6ED33B1AFEAE4F00A04417 /* GEOLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GEOLocations.h; path = "Third Party/ARKit/GEOLocations.h"; sourceTree = "<group>"; };
+		7B6ED33C1AFEAE4F00A04417 /* GEOLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GEOLocations.m; path = "Third Party/ARKit/GEOLocations.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,9 +232,28 @@
 		7B6ED32F1AFEAC3B00A04417 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
-				7B6ED32D1AFEAC3500A04417 /* ARKit */,
+				7B6ED3301AFEAE3E00A04417 /* ARKit */,
 			);
 			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		7B6ED3301AFEAE3E00A04417 /* ARKit */ = {
+			isa = PBXGroup;
+			children = (
+				7B6ED3311AFEAE4F00A04417 /* ARCoordinate.h */,
+				7B6ED3321AFEAE4F00A04417 /* ARCoordinate.m */,
+				7B6ED3331AFEAE4F00A04417 /* ARGeoCoordinate.h */,
+				7B6ED3341AFEAE4F00A04417 /* ARGeoCoordinate.m */,
+				7B6ED3351AFEAE4F00A04417 /* ARKit.h */,
+				7B6ED3361AFEAE4F00A04417 /* ARKit.m */,
+				7B6ED3371AFEAE4F00A04417 /* ARLocationDelegate.h */,
+				7B6ED3381AFEAE4F00A04417 /* ARViewProtocol.h */,
+				7B6ED3391AFEAE4F00A04417 /* AugmentedRealityController.h */,
+				7B6ED33A1AFEAE4F00A04417 /* AugmentedRealityController.m */,
+				7B6ED33B1AFEAE4F00A04417 /* GEOLocations.h */,
+				7B6ED33C1AFEAE4F00A04417 /* GEOLocations.m */,
+			);
+			name = ARKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,7 +337,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B6ED32E1AFEAC3500A04417 /* ARKit in Resources */,
 				7B6ED2F11AFE4D8D00A04417 /* Main.storyboard in Resources */,
 				7B6ED2F61AFE4D8D00A04417 /* LaunchScreen.xib in Resources */,
 				7B6ED2F31AFE4D8D00A04417 /* Images.xcassets in Resources */,
@@ -324,13 +357,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6ED2E81AFE4D8D00A04417 /* main.m in Sources */,
+				7B6ED3181AFE507400A04417 /* AppDelegate.m in Sources */,
 				7B6ED3241AFE79FE00A04417 /* PlacesLoader.m in Sources */,
 				7B6ED3111AFE500B00A04417 /* FlipsideViewController.m in Sources */,
 				7B6ED3151AFE505F00A04417 /* MainViewController.m in Sources */,
 				7B6ED3291AFE8E6400A04417 /* Place.m in Sources */,
-				7B6ED2E81AFE4D8D00A04417 /* main.m in Sources */,
 				7B6ED32C1AFE959900A04417 /* PlaceAnnotation.m in Sources */,
-				7B6ED3181AFE507400A04417 /* AppDelegate.m in Sources */,
+				7B6ED33F1AFEAE4F00A04417 /* ARKit.m in Sources */,
+				7B6ED33E1AFEAE4F00A04417 /* ARGeoCoordinate.m in Sources */,
+				7B6ED33D1AFEAE4F00A04417 /* ARCoordinate.m in Sources */,
+				7B6ED3401AFEAE4F00A04417 /* AugmentedRealityController.m in Sources */,
+				7B6ED3411AFEAE4F00A04417 /* GEOLocations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

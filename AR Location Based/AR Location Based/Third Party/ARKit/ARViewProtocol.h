@@ -6,6 +6,8 @@
 //  Copyright 2013 Agilite Software. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 @class ARGeoCoordinate;
 
 @protocol ARMarkerDelegate <NSObject>
