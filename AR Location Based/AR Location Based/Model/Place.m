@@ -33,15 +33,15 @@
     
     if ( self.placeName )
         if ( ! [self.placeName isEqualToString:@""] )
-            [mutableString appendFormat:@"Name: %@\n", self.placeName];
+            [mutableString appendFormat:@"Name: %@\n\n", self.placeName];
     
     if ( self.address )
         if ( ! [self.address isEqualToString:@""] )
-        [mutableString appendFormat:@"Address: %@\n", self.address];
+        [mutableString appendFormat:@"Address: %@\n\n", self.address];
     
     if ( self.phoneNumber )
         if ( ! [self.phoneNumber isEqualToString:@""] )
-        [mutableString appendFormat:@"Phone: %@\n", self.phoneNumber];
+        [mutableString appendFormat:@"Phone: %@\n\n", self.phoneNumber];
     
     if ( self.website )
         if ( ! [self.website isEqualToString:@""] )
