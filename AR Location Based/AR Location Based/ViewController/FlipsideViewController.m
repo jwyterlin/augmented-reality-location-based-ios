@@ -75,7 +75,7 @@
 
 -(NSMutableArray *)geoLocations {
 
-    if ( ! self.geoLocations)
+    if ( ! _geoLocations)
         [self generateGeoLocations];
 
     return _geoLocations;
@@ -83,6 +83,11 @@
 }
 
 -(void)locationClicked:(ARGeoCoordinate *) coordinate {
+}
+
+#pragma mark - MarkerViewDelegate methods
+
+-(void)didTouchMarkerView:(MarkerView *)markerView {
 }
 
 #pragma mark - Private methods
