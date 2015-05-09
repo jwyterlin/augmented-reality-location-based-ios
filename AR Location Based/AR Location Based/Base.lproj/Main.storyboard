@@ -15,11 +15,84 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7IC-pP-sE7">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Zc6-v1-jlw"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAd-oj-ODL">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="89" id="47q-i0-CQT"/>
+                                    <constraint firstAttribute="height" constant="55" id="wz3-EA-OHZ"/>
+                                </constraints>
+                                <state key="normal" title="Camera">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="47q-i0-CQT"/>
+                                        <exclude reference="wz3-EA-OHZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="47q-i0-CQT"/>
+                                        <include reference="wz3-EA-OHZ"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7IC-pP-sE7" secondAttribute="bottom" id="8vb-KX-ims"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="OAd-oj-ODL" secondAttribute="bottom" constant="21" id="Ajs-GJ-cfC"/>
+                            <constraint firstItem="7IC-pP-sE7" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="JBW-wL-3i8"/>
+                            <constraint firstAttribute="trailing" secondItem="7IC-pP-sE7" secondAttribute="trailing" id="JfI-QQ-05G"/>
+                            <constraint firstItem="7IC-pP-sE7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="VJV-gW-Bj3"/>
+                            <constraint firstAttribute="trailing" secondItem="OAd-oj-ODL" secondAttribute="trailing" constant="21" id="c2Q-a2-bTx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="7IC-pP-sE7"/>
+                                <exclude reference="OAd-oj-ODL"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="JBW-wL-3i8"/>
+                                <exclude reference="JfI-QQ-05G"/>
+                                <exclude reference="VJV-gW-Bj3"/>
+                                <exclude reference="c2Q-a2-bTx"/>
+                                <exclude reference="8vb-KX-ims"/>
+                                <exclude reference="Ajs-GJ-cfC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="7IC-pP-sE7"/>
+                                <include reference="OAd-oj-ODL"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="JBW-wL-3i8"/>
+                                <include reference="JfI-QQ-05G"/>
+                                <include reference="VJV-gW-Bj3"/>
+                                <include reference="c2Q-a2-bTx"/>
+                                <include reference="8vb-KX-ims"/>
+                                <include reference="Ajs-GJ-cfC"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="OAd-oj-ODL" id="Oaj-w4-pI9"/>
+                        <outlet property="mapView" destination="7IC-pP-sE7" id="IwN-Dk-kHj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="279" y="336.75"/>
         </scene>
     </scenes>
 </document>

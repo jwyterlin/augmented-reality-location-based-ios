@@ -13,7 +13,8 @@
 
 @interface MainViewController ()<FlipsideViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic,strong) IBOutlet MKMapView *mapView;
+@property (nonatomic,strong) IBOutlet UIButton *cameraButton;
 
 @end
 
@@ -22,7 +23,11 @@
 #pragma mark - View Lifecycle
 
 -(void)viewDidLoad {
+    
     [super viewDidLoad];
+    
+    self.cameraButton.layer.cornerRadius = 5.0;
+    
 }
 
 -(void)didReceiveMemoryWarning {
